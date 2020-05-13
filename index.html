@@ -22,10 +22,16 @@
 				{name:"Jonas Nordfors", date:"May 2017",dd:16.7, country:"Sweden", gender:"Men", link:"https://drive.google.com/file/d/18TvsMFYRSVHmdYmQZqL7SEifUT7RKAq3/view"},
 				{name:"Jake Cranham", date:"Oct 2017",dd:18.0, country:"Canada", gender:"Men", link:"https://drive.google.com/file/d/1wSCq_ncfInuel0QBKyBTZOnHvTpszLZ3/view"},
 				{name:"Nathan Shuh", date:"Oct 2017",dd:17.8, country:"Canada", gender:"Men", link:"https://drive.google.com/file/d/1P6AboA4WYb4K1xvhxnYKoBFOa0Ufl6m0/view"},
+				{name:"Mariola Garcia", date:"Apr 2018",dd:13.1, country:"Mexico", gender:"Women", link:"https://drive.google.com/file/d/1i-l6jvv-Ow7uuKdUDkxBbPbKt6sM1Um5/view"},
 				{name:"Rachel Tam", date:"June 2018",dd:14.6, country:"Canada", gender:"Women", link:"https://drive.google.com/file/d/1copuCr5NbNnGG7USEgtxPAmWPB2vNcBQ/view"},
 				{name:"Benjamin Kjaer", date:"Aug 2018",dd:18.0, country:"Denmark", gender:"Men", link:"https://drive.google.com/file/d/1paEd2TmbQbbHg-ugVXBoMPfjHTukBl5x/view"},
+				{name:"Maryia Makharynskaya", date:"Feb 2019",dd:13.7, country:"Belarus", gender:"Women", link:"https://drive.google.com/file/d/1jaLGJKjjY4xueNLbaM6i8iKEduEylM8R/view"},
 				{name:"Trevor Stirling", date:"Aug 2019",dd:16.8, country:"Canada", gender:"Men", link:"https://drive.google.com/file/d/15LHHagxM0CswCakOYXRRbbsRaUJfpdeS/view"},
-				{name:"Dafne Navarro", date:"Nov 2019",dd:15.0, country:"Mexico", gender:"Women", link:"https://drive.google.com/file/d/14q6QJNrPZLye2783s8p2SLLGm2SU7M9g/view"}
+				{name:"Yana Pavlova", date:"Sept 2019",dd:15.8, country:"Russia", gender:"Women", link:"https://drive.google.com/file/d/1vlHMZPwGkK0YBl9OEReRBUQQJROt3KhR/view"},
+				{name:"Dafne Navarro", date:"Nov 2019",dd:15.0, country:"Mexico", gender:"Women", link:"https://drive.google.com/file/d/14q6QJNrPZLye2783s8p2SLLGm2SU7M9g/view"},
+				{name:"Esaul Ceballos", date:"Nov 2019",dd:15.6, country:"Mexico", gender:"Men", link:"https://drive.google.com/file/d/1uwfo3gGZ58vHjdvzmZbpFTMdjqA3zznT/view"},
+				{name:"Donovan Guevara", date:"Nov 2019",dd:11.4, country:"Mexico", gender:"Women", link:"https://drive.google.com/file/d/1XLVhe-2Mtys35O7kf_-oTAuA4oCAPNff/view"},
+				{name:"Romana Schuring", date:"Feb 2020",dd:13.8, country:"Netherlands", gender:"Women", link:"https://drive.google.com/file/d/1ufmYMiOGWBdFGY0_G1D36QxtQECJmWps/view"}
 			];
 		</script>
 		<script language="javascript" type="text/javascript" src="Website_Data/header.txt"></script>
@@ -144,11 +150,15 @@
 			var td2 = document.createElement('td');
 			td2.setAttribute('class','name');
 			table.appendChild(td2);
-			td2.innerHTML = td2.innerHTML + "<a href=" + newcard.link + ">" + newcard.name + "</a>" + "&nbsp;";
+			td2.innerHTML = td2.innerHTML + "<span>" + newcard.name + "</span>";
 			var td3 = document.createElement('td');
-			td3.setAttribute('class','dd_date');
+			td3.setAttribute('class','play');
 			table.appendChild(td3);
-			td3.innerHTML = td3.innerHTML + "<center><span class=\"dd\">" + newcard.dd.toFixed(1) + "</span><br><span class=\"date\">" + newcard.date + "</span></center>";
+			td3.innerHTML = td3.innerHTML + "<a href=" + newcard.link + " class=\"play_button\"><img class=\"bottom\" src=\"Website_Data/play_green.png\" class=\"play-image\"/><img class=\"top\" src=\"Website_Data/play_black.png\" class=\"play-image\"/></a>";
+			var td4 = document.createElement('td');
+			td4.setAttribute('class','dd_date');
+			table.appendChild(td4);
+			td4.innerHTML = td4.innerHTML + "<center><span class=\"dd\">" + newcard.dd.toFixed(1) + "</span><br><span class=\"date\">" + newcard.date + "</span></center>";
 		}
 	</script>
 	<script id="build-site">
