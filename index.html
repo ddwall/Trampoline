@@ -60,6 +60,7 @@
 		function AddButtonsUnique(data_type,hideshowall) {
 			var capitalized_name = data_type.charAt(0).toUpperCase() + data_type.slice(1);
 			var flags = [];
+			var list = [];
 			var i;
 			var p = document.createElement('p');
 			document.getElementById("filters-container").appendChild(p);
@@ -67,17 +68,22 @@
 			if (hideshowall) {
 				AddButtonsShowHideAll(data_type)
 			}
+			//make list of unique members of data_type
 			for (i = 0; i < cards.length; i++) {
 				if(flags[cards[i][data_type]] == undefined) {
 				  flags[cards[i][data_type]] = true;
-				  //make button
-				  var a = document.createElement('a');
-				  a.setAttribute('class',"filter active " + data_type);
-				  a.setAttribute('id',cards[i][data_type])
-				  a.setAttribute('onclick',"filterCards('" + cards[i][data_type] + "');this.classList.toggle('active');filterCards();");
-				  document.getElementById("filters-container").appendChild(a);
-				  a.innerHTML = a.innerHTML + cards[i][data_type];
+				  list.push(cards[i][data_type]);
 				}
+			}
+			list.sort();
+			//make a button for each unique member of data_type
+			for (i = 0; i < list.length; i++) {
+				var a = document.createElement('a');
+				a.setAttribute('class',"filter active " + data_type);
+				a.setAttribute('id',list[i])
+				a.setAttribute('onclick',"filterCards('" + list[i] + "');this.classList.toggle('active');filterCards();");
+				document.getElementById("filters-container").appendChild(a);
+				a.innerHTML = a.innerHTML + list[i];
 			}
 		}
 		//function to add "Show All" and "Hide All" filter buttons for a certain data type
